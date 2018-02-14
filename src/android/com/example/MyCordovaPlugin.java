@@ -12,11 +12,14 @@ import org.json.JSONObject;
 import org.json.JSONArray;
 import org.json.JSONException;
 
+import android.app.Activity;
 import android.util.Log;
+import android.view.View;
 
 import java.util.Date;
 
 public class MyCordovaPlugin extends CordovaPlugin {
+
   private static final String TAG = "MyCordovaPlugin";
 
   public void initialize(CordovaInterface cordova, CordovaWebView webView) {
@@ -28,6 +31,11 @@ public class MyCordovaPlugin extends CordovaPlugin {
   public boolean execute(String action, JSONArray args, final CallbackContext callbackContext) throws JSONException {
     if(action.equals("echo")) {
       String phrase = args.getString(0);
+
+      View myView = this.webView.getView();
+
+      HPAppPulse.setActionName(myView, phrase);
+
       // Echo back the first argument
       Log.d(TAG, phrase);
     } else if(action.equals("getDate")) {
