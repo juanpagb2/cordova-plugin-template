@@ -23,6 +23,7 @@
         </feature>
       </config-file>
 
+      <source-file src="src/android/com/example/HPAppPulseMobile.jar" target-dir="lib" />
       <source-file src="src/android/com/example/MyCordovaPlugin.java" target-dir="src/com/example/" />
     </platform>
 
