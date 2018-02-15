@@ -33,6 +33,7 @@ public class MyCordovaPlugin extends CordovaPlugin {
       View myView = this.webView.getView();
 
       HPAppPulse.setActionName(myView, phrase);
+      HPAppPulse.setControlType(myView, HPAppPulse.HpControlType.Button);
 
       // Echo back the first argument
       Log.d(TAG, phrase);
